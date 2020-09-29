@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Registro de jogos da Maria</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1 class="titulo">Jogos da Maria</h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+			    <h2 id="titulo-form">Adicionar jogo</h2>			    				
+			    <form id="form-adiciona">
+			        <div class="">
+			            <label for="nome">Jogo:</label>
+			            <input id="jogo" name="jogo" type="text" placeholder="Informe a descrição do jogo" class="campo campo-medio">
+			            <span id=erro-jogo></span>
+			        </div>
+			        <div class="grupo">
+			            <label for="peso">Placar do jogo:</label>
+			            <input id="placar" name="placar" type="number" placeholder="Informe o placar do jogo" class="campo campo-medio">
+			            <span id=erro-placar></span>
+			        </div>
+			        <button id="adicionar-jogo" class="botao bto-principal">Adicionar</button>
+			    </form>
+			</section>	
+
+			<section class="container">
+				<h2>Registro de jogos</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Jogo</th>
+							<th>Placar</th>
+							<th>Mínimo da temporada</th>
+							<th>Máximo da temporada</th>
+							<th>Quebra recorde mínimo</th>
+							<th>Quebra recorde máximo</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-jogos">
+					</tbody>
+				</table>				
+			</section>
+		</main>
+		<script src="js/calcula-dados.js" ></script>
+		<script src="js/form.js" ></script>
+		<script src="js/remover-jogo.js" ></script>	
+	</body>
+</html>
