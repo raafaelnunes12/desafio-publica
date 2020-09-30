@@ -21,7 +21,9 @@ botaoAdicionar.addEventListener("click", function(event) {      // Associa o eve
         return;
     }
     
+    adicionaMaximoEMinimoNoPlacar(registro)
     adicionaJogoNaTabela(registro);  //Monta a estrutura da table do id tabela-jogos    
+    
  
     form.reset();  // Limpa todas as informações dos campos do form
 
@@ -35,10 +37,10 @@ function obtemJogoDoFormulario(form) {                                      //Re
     var jogo = {                                                            //Inicia variável
         codJogo: form.jogo.value,                                           //Informação do campo Jogo do form
         placar: form.placar.value,                                          //Informação do campo Placar do form        
-        minimoTemporada: calculaMinimoTemporada(Number(form.placar.value)), //Retorno da função calculaMinimoTemporada
-        maximoTemporada: calculaMaximoTemporada(Number(form.placar.value)), //Retorno da função calculaMaximoTemporada  
-        recordeMinino: quebraMinimo,                                        //Retorno da variável quebraMinimo
-        recordeMaximo: quebraMaximo                                         //Retorno da variável quebraMaximo       
+        //minimoTemporada: calculaMinimoTemporada(Number(form.placar.value)), //Retorno da função calculaMinimoTemporada
+        //maximoTemporada: calculaMaximoTemporada(Number(form.placar.value)), //Retorno da função calculaMaximoTemporada  
+        //recordeMinino: quebraMinimo,                                        //Retorno da variável quebraMinimo
+        //recordeMaximo: quebraMaximo                                         //Retorno da variável quebraMaximo       
     }
     return jogo;
 }
@@ -67,4 +69,11 @@ function adicionaJogoNaTabela(registro) {                   // Recebe o retorno 
     var jogoTr = montaTr(registro);                         // na tabela do form que possui o id tabela-jogos
     var tabela = document.querySelector("#tabela-jogos");
     tabela.appendChild(jogoTr);
+}
+
+function adicionaMaximoEMinimoNoPlacar(placar){
+    placar.minimoTemporada = calculaMinimoTemporada(Number(placar.placar));
+    placar.maximoTemporada = calculaMaximoTemporada(Number(placar.placar));
+    placar.recordeMinino = quebraMinimo; //Retorno da variável quebraMinimo
+    placar.recordeMaximo =  quebraMaximo; //Retorno da variável quebraMaximo
 }
